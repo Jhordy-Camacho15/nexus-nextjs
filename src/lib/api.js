@@ -2,6 +2,8 @@ import 'server-only';
 import { cacheLife, cacheTag } from 'next/cache';
 
 // Capa de acceso a la API simulada (Apidog). Solo se ejecuta en el servidor.
+// Las listas llegan dentro de un objeto ({ catalogo: [...] }): Apidog solo devuelve el primer
+// elemento cuando la raíz del ejemplo importado es una lista.
 // Las lecturas que no dependen del usuario se cachean con 'use cache' y forman parte del HTML estático;
 // las que deben estar al día (ocupación, historial del usuario) se piden en cada petición.
 
@@ -39,14 +41,14 @@ export async function getNexusInfo() {
 export async function getCategorias() {
   'use cache';
   cacheLife('days');
-  return apiFetch('/categorias');
+  return (await apiFetch('/categorias')).categorias;
 }
 
 export async function getCatalogo() {
   'use cache';
   cacheLife('hours');
   cacheTag('catalogo');
-  return apiFetch('/catalogo');
+  return (await apiFetch('/catalogo')).catalogo;
 }
 
 export async function getItem(id) {
@@ -62,7 +64,7 @@ export async function getMasVendidos(limite = 10) {
 export async function getEspacios() {
   'use cache';
   cacheLife('days');
-  return apiFetch('/coworking/espacios');
+  return (await apiFetch('/coworking/espacios')).espacios;
 }
 
 export async function getEspacio(id) {
@@ -76,12 +78,12 @@ export function getOcupacion() {
   return apiFetch('/coworking/ocupacion');
 }
 
-export function getHistorialCompras(token) {
-  return apiFetch('/usuarios/me/compras', { token });
+export async function getHistorialCompras(token) {
+  return (await apiFetch('/usuarios/me/compras', { token })).compras;
 }
 
-export function getHistorialReservas(token) {
-  return apiFetch('/usuarios/me/reservas', { token });
+export async function getHistorialReservas(token) {
+  return (await apiFetch('/usuarios/me/reservas', { token })).reservas;
 }
 
 // ---------- Escrituras (se llaman desde Server Actions) ----------

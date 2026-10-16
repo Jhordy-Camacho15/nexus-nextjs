@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Tokens de diseño de Nexus: se usan como utilidades de Tailwind (bg-paper, text-ink, font-display...) */
+@theme static {
+  --color-paper: #f7f2e8;
+  --color-paper-deep: #efe7d8;
+  --color-card: #fffdf8;
+  --color-ink: #1d2422;
+  --color-ink-soft: #545c58;
+  --color-line: #ddd2bf;
+  --color-accent: #b4532a;
+  --color-accent-strong: #8f3d1c;
+  --color-forest: #1f4d3f;
+  --color-forest-soft: #e3ece7;
+  --color-free: #2f7d4f;
+  --color-free-soft: #dff0e5;
+  --color-busy: #b42318;
+  --color-busy-soft: #fbe3df;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+
+  h1, h2, h3 {
+    @apply font-display text-balance;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+/* Utilidades propias que se repiten en muchas vistas (con @utility admiten variantes como md: o hover:) */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-forest text-paper hover:bg-ink;
+}
+@utility btn-accent {
+  @apply btn bg-accent text-white hover:bg-accent-strong;
+}
+@utility btn-ghost {
+  @apply btn border border-line bg-card text-ink hover:border-ink;
+}
+@utility card {
+  @apply rounded-2xl border border-line bg-card;
+}
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+}
+@utility field {
+  @apply w-full rounded-xl border border-line bg-card px-3 py-2 text-sm text-ink placeholder:text-ink-soft/60 focus:border-forest focus:outline-none;
+}
+@utility label {
+  @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-ink-soft;
+}

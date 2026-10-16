@@ -1,0 +1,124 @@
+/* Módulo CSS del plano del coworking. Las clases quedan encapsuladas (Plano_espacio__x1y2z)
+   y conviven con Tailwind; los colores reutilizan las variables del tema definidas en globals.css. */
+
+.plano {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(9, minmax(2.75rem, auto));
+  gap: 0.5rem;
+  min-width: 640px;
+  padding: 1rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 1.25rem;
+  background-color: var(--color-card);
+  background-image: radial-gradient(var(--color-line) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.mini {
+  min-width: 0;
+  grid-template-rows: repeat(9, 1.1rem);
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-width: 1px;
+  border-radius: 0.75rem;
+}
+
+.celda {
+  grid-column: var(--x) / span var(--w);
+  grid-row: var(--y) / span var(--h);
+}
+
+.espacio {
+  composes: celda;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.25rem;
+  padding: 0.5rem 0.6rem;
+  border: 1.5px solid;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.espacio:hover,
+.espacio:focus-visible,
+.activo {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -12px rgb(29 36 34 / 0.6);
+  z-index: 1;
+}
+
+.libre {
+  border-color: var(--color-free);
+  background-color: var(--color-free-soft);
+  color: var(--color-free);
+}
+
+.ocupado {
+  border-color: var(--color-busy);
+  background-color: var(--color-busy-soft);
+  color: var(--color-busy);
+}
+
+.resaltado {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.apagado {
+  border-color: var(--color-line);
+  background-color: var(--color-paper-deep);
+}
+
+.decoracion {
+  composes: celda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed var(--color-line);
+  border-radius: 0.75rem;
+  color: var(--color-ink-soft);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.codigo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.punto {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.3rem;
+  border-radius: 9999px;
+  background-color: currentColor;
+}
+
+.ocupado .punto {
+  animation: latido 1.6s ease-in-out infinite;
+}
+
+@keyframes latido {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .espacio,
+  .ocupado .punto {
+    transition: none;
+    animation: none;
+  }
+}

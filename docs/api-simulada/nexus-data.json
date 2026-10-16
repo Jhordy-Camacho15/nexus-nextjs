@@ -1,0 +1,391 @@
+{
+  "GET /nexus": {
+    "nombre": "Nexus",
+    "eslogan": "Librería universitaria, coworking, cafetería y eventos en un mismo lugar",
+    "direccion": "Av. del Conocimiento 45, Campus Universitario",
+    "telefono": "+34 915 555 123",
+    "email": "hola@nexus.edu",
+    "horario": "Lunes a viernes de 8:00 a 22:00 · Sábados de 9:00 a 15:00",
+    "servicios": [
+      {
+        "id": "libreria",
+        "nombre": "Librería universitaria",
+        "descripcion": "Manuales, ensayos, literatura y revistas académicas con precio de estudiante.",
+        "disponibleEnApp": true
+      },
+      {
+        "id": "coworking",
+        "nombre": "Coworking",
+        "descripcion": "Puestos individuales, mesas compartidas, salas de reuniones y un aula de formación.",
+        "disponibleEnApp": true
+      },
+      {
+        "id": "cafeteria",
+        "nombre": "Cafetería",
+        "descripcion": "Café de especialidad y comida casera para largas jornadas de estudio.",
+        "disponibleEnApp": false
+      },
+      {
+        "id": "eventos",
+        "nombre": "Eventos",
+        "descripcion": "Presentaciones de libros, talleres y charlas con docentes e invitados.",
+        "disponibleEnApp": false
+      }
+    ]
+  },
+
+  "GET /categorias": [
+    { "slug": "programacion", "nombre": "Programación", "tipo": "libro", "descripcion": "Desarrollo de software, algoritmos y buenas prácticas." },
+    { "slug": "matematicas", "nombre": "Matemáticas", "tipo": "libro", "descripcion": "Cálculo, álgebra lineal, matemática discreta y probabilidad." },
+    { "slug": "ciencias", "nombre": "Ciencias", "tipo": "libro", "descripcion": "Física, cosmología y biología para curiosos y especialistas." },
+    { "slug": "economia", "nombre": "Economía", "tipo": "libro", "descripcion": "Economía conductual, desigualdad y pensamiento económico." },
+    { "slug": "literatura", "nombre": "Literatura", "tipo": "libro", "descripcion": "Clásicos y contemporáneos en español e inglés." },
+    { "slug": "historia", "nombre": "Historia", "tipo": "libro", "descripcion": "Grandes relatos sobre la humanidad y las civilizaciones." },
+    { "slug": "diseno", "nombre": "Diseño", "tipo": "libro", "descripcion": "Diseño de interacción, usabilidad y experiencia de usuario." },
+    { "slug": "revista-ciencia", "nombre": "Ciencia", "tipo": "revista", "descripcion": "Revistas de divulgación e investigación científica." },
+    { "slug": "revista-tecnologia", "nombre": "Tecnología", "tipo": "revista", "descripcion": "Revistas sobre software, diseño digital y tecnología." },
+    { "slug": "revista-cultura", "nombre": "Cultura", "tipo": "revista", "descripcion": "Revistas de literatura, pensamiento y sociedad." }
+  ],
+
+  "GET /catalogo": [
+    {
+      "id": 1, "tipo": "libro", "titulo": "Clean Code", "autor": "Robert C. Martin",
+      "categoria": "programacion", "anio": 2008, "editorial": "Prentice Hall", "idioma": "Inglés",
+      "paginas": 464, "isbn": "9780132350884", "precio": 42.9, "stock": 12,
+      "ventasUltimasSemanas": 184, "valoracion": 4.6,
+      "descripcion": "Guía práctica para escribir código legible y fácil de mantener: nombres, funciones, comentarios, manejo de errores y pruebas unitarias.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg", "colorPortada": "#1f3a5f"
+    },
+    {
+      "id": 2, "tipo": "libro", "titulo": "The Pragmatic Programmer", "autor": "David Thomas y Andrew Hunt",
+      "categoria": "programacion", "anio": 2019, "editorial": "Addison-Wesley", "idioma": "Inglés",
+      "paginas": 352, "isbn": "9780135957059", "precio": 45.5, "stock": 9,
+      "ventasUltimasSemanas": 171, "valoracion": 4.7,
+      "descripcion": "Edición del 20.º aniversario del clásico sobre el oficio de programar: responsabilidad, automatización y diseño adaptable al cambio.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg", "colorPortada": "#7a2e1f"
+    },
+    {
+      "id": 3, "tipo": "libro", "titulo": "Eloquent JavaScript", "autor": "Marijn Haverbeke",
+      "categoria": "programacion", "anio": 2018, "editorial": "No Starch Press", "idioma": "Inglés",
+      "paginas": 472, "isbn": "9781593279509", "precio": 34.95, "stock": 15,
+      "ventasUltimasSemanas": 96, "valoracion": 4.4,
+      "descripcion": "Introducción moderna a JavaScript y a la programación: estructuras de datos, funciones de orden superior, asincronía y el DOM.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9781593279509-L.jpg", "colorPortada": "#c9a227"
+    },
+    {
+      "id": 4, "tipo": "libro", "titulo": "Design Patterns", "autor": "Erich Gamma, Richard Helm, Ralph Johnson y John Vlissides",
+      "categoria": "programacion", "anio": 1994, "editorial": "Addison-Wesley", "idioma": "Inglés",
+      "paginas": 395, "isbn": "9780201633610", "precio": 54.0, "stock": 4,
+      "ventasUltimasSemanas": 58, "valoracion": 4.5,
+      "descripcion": "El catálogo original de 23 patrones de diseño orientado a objetos que definió el vocabulario de toda una generación de ingenieros.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg", "colorPortada": "#3b3b3b"
+    },
+    {
+      "id": 5, "tipo": "libro", "titulo": "Introduction to Algorithms", "autor": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest y Clifford Stein",
+      "categoria": "programacion", "anio": 2009, "editorial": "MIT Press", "idioma": "Inglés",
+      "paginas": 1312, "isbn": "9780262033848", "precio": 89.0, "stock": 6,
+      "ventasUltimasSemanas": 131, "valoracion": 4.6,
+      "descripcion": "El manual de referencia de algoritmos: ordenación, grafos, programación dinámica y análisis de complejidad.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780262033848-L.jpg", "colorPortada": "#4b2a5c"
+    },
+    {
+      "id": 6, "tipo": "libro", "titulo": "Refactoring", "autor": "Martin Fowler",
+      "categoria": "programacion", "anio": 2018, "editorial": "Addison-Wesley", "idioma": "Inglés",
+      "paginas": 448, "isbn": "9780134757599", "precio": 47.9, "stock": 7,
+      "ventasUltimasSemanas": 74, "valoracion": 4.5,
+      "descripcion": "Segunda edición, con ejemplos en JavaScript, del catálogo de refactorizaciones para mejorar el diseño del código existente.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780134757599-L.jpg", "colorPortada": "#2f5d50"
+    },
+    {
+      "id": 7, "tipo": "libro", "titulo": "Calculus", "autor": "James Stewart",
+      "categoria": "matematicas", "anio": 2015, "editorial": "Cengage Learning", "idioma": "Inglés",
+      "paginas": 1368, "isbn": "9781285740621", "precio": 79.9, "stock": 10,
+      "ventasUltimasSemanas": 122, "valoracion": 4.3,
+      "descripcion": "Octava edición del texto de cálculo más usado en primeros cursos universitarios, con miles de ejercicios resueltos.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9781285740621-L.jpg", "colorPortada": "#a33b20"
+    },
+    {
+      "id": 8, "tipo": "libro", "titulo": "Linear Algebra and Its Applications", "autor": "David C. Lay, Steven R. Lay y Judi J. McDonald",
+      "categoria": "matematicas", "anio": 2015, "editorial": "Pearson", "idioma": "Inglés",
+      "paginas": 576, "isbn": "9780321982384", "precio": 68.5, "stock": 8,
+      "ventasUltimasSemanas": 67, "valoracion": 4.2,
+      "descripcion": "Álgebra lineal con un enfoque aplicado: sistemas de ecuaciones, espacios vectoriales, valores propios y mínimos cuadrados.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780321982384-L.jpg", "colorPortada": "#25507a"
+    },
+    {
+      "id": 9, "tipo": "libro", "titulo": "Concrete Mathematics", "autor": "Ronald L. Graham, Donald E. Knuth y Oren Patashnik",
+      "categoria": "matematicas", "anio": 1994, "editorial": "Addison-Wesley", "idioma": "Inglés",
+      "paginas": 657, "isbn": "9780201558029", "precio": 61.0, "stock": 0,
+      "ventasUltimasSemanas": 22, "valoracion": 4.6,
+      "descripcion": "Fundamentos matemáticos para la informática: sumatorias, recurrencias, coeficientes binomiales y funciones generadoras.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780201558029-L.jpg", "colorPortada": "#5a4a2f"
+    },
+    {
+      "id": 10, "tipo": "libro", "titulo": "Introduction to Probability", "autor": "Joseph K. Blitzstein y Jessica Hwang",
+      "categoria": "matematicas", "anio": 2014, "editorial": "CRC Press", "idioma": "Inglés",
+      "paginas": 596, "isbn": "9781466575578", "precio": 58.75, "stock": 5,
+      "ventasUltimasSemanas": 41, "valoracion": 4.7,
+      "descripcion": "El curso de probabilidad de Harvard convertido en libro: intuición, historias y simulación para dominar el razonamiento probabilístico.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9781466575578-L.jpg", "colorPortada": "#1d6b6b"
+    },
+    {
+      "id": 11, "tipo": "libro", "titulo": "A Brief History of Time", "autor": "Stephen Hawking",
+      "categoria": "ciencias", "anio": 1998, "editorial": "Bantam", "idioma": "Inglés",
+      "paginas": 212, "isbn": "9780553380163", "precio": 16.9, "stock": 18,
+      "ventasUltimasSemanas": 118, "valoracion": 4.4,
+      "descripcion": "Del Big Bang a los agujeros negros: la obra que acercó la cosmología moderna al gran público.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg", "colorPortada": "#111827"
+    },
+    {
+      "id": 12, "tipo": "libro", "titulo": "The Feynman Lectures on Physics, Vol. I", "autor": "Richard P. Feynman, Robert B. Leighton y Matthew Sands",
+      "categoria": "ciencias", "anio": 2011, "editorial": "Basic Books", "idioma": "Inglés",
+      "paginas": 560, "isbn": "9780465024933", "precio": 39.9, "stock": 2,
+      "ventasUltimasSemanas": 37, "valoracion": 4.8,
+      "descripcion": "Mecánica, radiación y calor explicados por Feynman en sus célebres clases de Caltech.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780465024933-L.jpg", "colorPortada": "#8b1e1e"
+    },
+    {
+      "id": 13, "tipo": "libro", "titulo": "Cosmos", "autor": "Carl Sagan",
+      "categoria": "ciencias", "anio": 2013, "editorial": "Ballantine Books", "idioma": "Inglés",
+      "paginas": 432, "isbn": "9780345539434", "precio": 18.5, "stock": 11,
+      "ventasUltimasSemanas": 88, "valoracion": 4.7,
+      "descripcion": "Un viaje por la historia de la ciencia y el lugar de la humanidad en el universo.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg", "colorPortada": "#0f2e4a"
+    },
+    {
+      "id": 14, "tipo": "libro", "titulo": "The Selfish Gene", "autor": "Richard Dawkins",
+      "categoria": "ciencias", "anio": 2016, "editorial": "Oxford University Press", "idioma": "Inglés",
+      "paginas": 544, "isbn": "9780198788607", "precio": 19.9, "stock": 9,
+      "ventasUltimasSemanas": 45, "valoracion": 4.3,
+      "descripcion": "Edición del 40.º aniversario del ensayo que explica la evolución desde el punto de vista del gen.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780198788607-L.jpg", "colorPortada": "#a8741a"
+    },
+    {
+      "id": 15, "tipo": "libro", "titulo": "Thinking, Fast and Slow", "autor": "Daniel Kahneman",
+      "categoria": "economia", "anio": 2013, "editorial": "Farrar, Straus and Giroux", "idioma": "Inglés",
+      "paginas": 512, "isbn": "9780374533557", "precio": 21.9, "stock": 14,
+      "ventasUltimasSemanas": 152, "valoracion": 4.5,
+      "descripcion": "El Nobel de Economía explica los dos sistemas que gobiernan nuestras decisiones y los sesgos que los acompañan.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg", "colorPortada": "#e5e7eb"
+    },
+    {
+      "id": 16, "tipo": "libro", "titulo": "Freakonomics", "autor": "Steven D. Levitt y Stephen J. Dubner",
+      "categoria": "economia", "anio": 2006, "editorial": "William Morrow", "idioma": "Inglés",
+      "paginas": 320, "isbn": "9780060731328", "precio": 17.5, "stock": 6,
+      "ventasUltimasSemanas": 29, "valoracion": 4.0,
+      "descripcion": "Un economista rebelde aplica el análisis de datos a preguntas cotidianas e inesperadas.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780060731328-L.jpg", "colorPortada": "#c2410c"
+    },
+    {
+      "id": 17, "tipo": "libro", "titulo": "Capital in the Twenty-First Century", "autor": "Thomas Piketty",
+      "categoria": "economia", "anio": 2017, "editorial": "Belknap Press", "idioma": "Inglés",
+      "paginas": 816, "isbn": "9780674979857", "precio": 27.9, "stock": 3,
+      "ventasUltimasSemanas": 33, "valoracion": 4.1,
+      "descripcion": "Análisis histórico de la acumulación y distribución de la riqueza desde el siglo XVIII.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780674979857-L.jpg", "colorPortada": "#b91c1c"
+    },
+    {
+      "id": 18, "tipo": "libro", "titulo": "Cien años de soledad", "autor": "Gabriel García Márquez",
+      "categoria": "literatura", "anio": 2009, "editorial": "Vintage Español", "idioma": "Español",
+      "paginas": 417, "isbn": "9780307474728", "precio": 17.95, "stock": 20,
+      "ventasUltimasSemanas": 147, "valoracion": 4.8,
+      "descripcion": "La saga de los Buendía en Macondo, obra cumbre del realismo mágico latinoamericano.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780307474728-L.jpg", "colorPortada": "#d97706"
+    },
+    {
+      "id": 19, "tipo": "libro", "titulo": "Don Quixote", "autor": "Miguel de Cervantes (trad. Edith Grossman)",
+      "categoria": "literatura", "anio": 2005, "editorial": "Ecco", "idioma": "Inglés",
+      "paginas": 992, "isbn": "9780060934347", "precio": 24.9, "stock": 7,
+      "ventasUltimasSemanas": 31, "valoracion": 4.4,
+      "descripcion": "La aclamada traducción al inglés de Edith Grossman del clásico de Cervantes.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780060934347-L.jpg", "colorPortada": "#7c5c2e"
+    },
+    {
+      "id": 20, "tipo": "libro", "titulo": "1984", "autor": "George Orwell",
+      "categoria": "literatura", "anio": 1961, "editorial": "Signet Classics", "idioma": "Inglés",
+      "paginas": 328, "isbn": "9780451524935", "precio": 11.9, "stock": 25,
+      "ventasUltimasSemanas": 109, "valoracion": 4.6,
+      "descripcion": "La distopía sobre la vigilancia, la propaganda y el control del lenguaje que sigue más vigente que nunca.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg", "colorPortada": "#991b1b"
+    },
+    {
+      "id": 21, "tipo": "libro", "titulo": "Rayuela", "autor": "Julio Cortázar",
+      "categoria": "literatura", "anio": 1984, "editorial": "Cátedra", "idioma": "Español",
+      "paginas": 736, "isbn": "9788437604572", "precio": 19.5, "stock": 0,
+      "ventasUltimasSemanas": 27, "valoracion": 4.5,
+      "descripcion": "La contranovela de Cortázar, que puede leerse de corrido o saltando capítulos según el tablero de dirección.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9788437604572-L.jpg", "colorPortada": "#334155"
+    },
+    {
+      "id": 22, "tipo": "libro", "titulo": "The Shadow of the Wind", "autor": "Carlos Ruiz Zafón",
+      "categoria": "literatura", "anio": 2005, "editorial": "Penguin Books", "idioma": "Inglés",
+      "paginas": 487, "isbn": "9780143034902", "precio": 16.5, "stock": 8,
+      "ventasUltimasSemanas": 52, "valoracion": 4.6,
+      "descripcion": "Barcelona, 1945: un niño descubre un libro maldito en el Cementerio de los Libros Olvidados.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780143034902-L.jpg", "colorPortada": "#3f3f46"
+    },
+    {
+      "id": 23, "tipo": "libro", "titulo": "Sapiens", "autor": "Yuval Noah Harari",
+      "categoria": "historia", "anio": 2015, "editorial": "Harper", "idioma": "Inglés",
+      "paginas": 464, "isbn": "9780062316097", "precio": 22.9, "stock": 16,
+      "ventasUltimasSemanas": 163, "valoracion": 4.5,
+      "descripcion": "Breve historia de la humanidad: de la revolución cognitiva a la científica.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg", "colorPortada": "#f5f5f4"
+    },
+    {
+      "id": 24, "tipo": "libro", "titulo": "Guns, Germs, and Steel", "autor": "Jared Diamond",
+      "categoria": "historia", "anio": 2017, "editorial": "W. W. Norton", "idioma": "Inglés",
+      "paginas": 528, "isbn": "9780393354324", "precio": 21.5, "stock": 5,
+      "ventasUltimasSemanas": 39, "valoracion": 4.2,
+      "descripcion": "Por qué unas sociedades dominaron a otras: geografía, agricultura y enfermedades como motores de la historia.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780393354324-L.jpg", "colorPortada": "#854d0e"
+    },
+    {
+      "id": 25, "tipo": "libro", "titulo": "The Design of Everyday Things", "autor": "Don Norman",
+      "categoria": "diseno", "anio": 2013, "editorial": "Basic Books", "idioma": "Inglés",
+      "paginas": 368, "isbn": "9780465050659", "precio": 19.9, "stock": 13,
+      "ventasUltimasSemanas": 139, "valoracion": 4.6,
+      "descripcion": "Edición revisada del libro que definió el diseño centrado en las personas: affordances, señales y modelos mentales.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg", "colorPortada": "#dc2626"
+    },
+    {
+      "id": 26, "tipo": "libro", "titulo": "Don't Make Me Think, Revisited", "autor": "Steve Krug",
+      "categoria": "diseno", "anio": 2014, "editorial": "New Riders", "idioma": "Inglés",
+      "paginas": 216, "isbn": "9780321965516", "precio": 32.9, "stock": 10,
+      "ventasUltimasSemanas": 101, "valoracion": 4.6,
+      "descripcion": "Usabilidad web y móvil con sentido común: menos fricción, mejores decisiones de diseño.",
+      "portada": "https://covers.openlibrary.org/b/isbn/9780321965516-L.jpg", "colorPortada": "#facc15"
+    },
+    {
+      "id": 27, "tipo": "revista", "titulo": "Cuadernos de Física Aplicada", "autor": "Facultad de Ciencias Nexus",
+      "categoria": "revista-ciencia", "anio": 2026, "editorial": "Ediciones Nexus Universidad", "idioma": "Español",
+      "paginas": 96, "issn": "2794-0145", "numero": "N.º 48 · Septiembre 2026", "precio": 8.5, "stock": 30,
+      "ventasUltimasSemanas": 64, "valoracion": 4.2,
+      "descripcion": "Especial sobre computación cuántica: estado del arte, laboratorios europeos y entrevistas a investigadoras.",
+      "portada": null, "colorPortada": "#0f766e"
+    },
+    {
+      "id": 28, "tipo": "revista", "titulo": "Biología Hoy", "autor": "Sociedad Universitaria de Biología",
+      "categoria": "revista-ciencia", "anio": 2025, "editorial": "Ediciones Nexus Universidad", "idioma": "Español",
+      "paginas": 84, "issn": "2794-0218", "numero": "N.º 112 · Noviembre 2025", "precio": 7.9, "stock": 12,
+      "ventasUltimasSemanas": 18, "valoracion": 4.0,
+      "descripcion": "Edición genética, microbiota y conservación de especies en la península ibérica.",
+      "portada": null, "colorPortada": "#4d7c0f"
+    },
+    {
+      "id": 29, "tipo": "revista", "titulo": "Código Abierto", "autor": "Colectivo de Ingeniería de Software",
+      "categoria": "revista-tecnologia", "anio": 2026, "editorial": "Ediciones Nexus Universidad", "idioma": "Español",
+      "paginas": 72, "issn": "2794-0331", "numero": "N.º 73 · Octubre 2026", "precio": 6.9, "stock": 25,
+      "ventasUltimasSemanas": 82, "valoracion": 4.4,
+      "descripcion": "Frameworks frontend en 2026, renderizado híbrido y una guía para migrar aplicaciones React a Next.js.",
+      "portada": null, "colorPortada": "#1e1b4b"
+    },
+    {
+      "id": 30, "tipo": "revista", "titulo": "Interfaz", "autor": "Escuela de Diseño Nexus",
+      "categoria": "revista-tecnologia", "anio": 2025, "editorial": "Ediciones Nexus Universidad", "idioma": "Español",
+      "paginas": 64, "issn": "2794-0412", "numero": "N.º 21 · Junio 2025", "precio": 9.5, "stock": 7,
+      "ventasUltimasSemanas": 23, "valoracion": 4.3,
+      "descripcion": "Diseño de sistemas, accesibilidad y tipografía variable en productos digitales.",
+      "portada": null, "colorPortada": "#be185d"
+    },
+    {
+      "id": 31, "tipo": "revista", "titulo": "Letras del Campus", "autor": "Taller Literario Nexus",
+      "categoria": "revista-cultura", "anio": 2024, "editorial": "Ediciones Nexus Universidad", "idioma": "Español",
+      "paginas": 120, "issn": "2794-0560", "numero": "N.º 35 · Primavera 2024", "precio": 5.5, "stock": 0,
+      "ventasUltimasSemanas": 9, "valoracion": 4.1,
+      "descripcion": "Relatos, poesía y reseñas escritas por estudiantes de grado y posgrado.",
+      "portada": null, "colorPortada": "#9a3412"
+    },
+    {
+      "id": 32, "tipo": "revista", "titulo": "Ágora", "autor": "Departamento de Humanidades",
+      "categoria": "revista-cultura", "anio": 2026, "editorial": "Ediciones Nexus Universidad", "idioma": "Español",
+      "paginas": 88, "issn": "2794-0633", "numero": "N.º 59 · Julio 2026", "precio": 6.5, "stock": 14,
+      "ventasUltimasSemanas": 15, "valoracion": 3.9,
+      "descripcion": "Pensamiento y sociedad: inteligencia artificial, trabajo y el futuro de la universidad.",
+      "portada": null, "colorPortada": "#374151"
+    }
+  ],
+
+  "GET /coworking/espacios": [
+    { "id": "A1", "nombre": "Puesto A1", "tipo": "puesto", "zona": "Zona silenciosa", "capacidad": 1, "precioHora": 2.5, "equipamiento": ["Enchufe", "Lámpara de lectura", "Silla ergonómica"], "descripcion": "Puesto individual junto a la ventana norte, con luz natural toda la mañana.", "posicion": { "x": 1, "y": 1, "w": 2, "h": 2 } },
+    { "id": "A2", "nombre": "Puesto A2", "tipo": "puesto", "zona": "Zona silenciosa", "capacidad": 1, "precioHora": 2.5, "equipamiento": ["Enchufe", "Lámpara de lectura", "Silla ergonómica"], "descripcion": "Puesto individual en la zona silenciosa, ideal para lectura y concentración.", "posicion": { "x": 3, "y": 1, "w": 2, "h": 2 } },
+    { "id": "A3", "nombre": "Puesto A3", "tipo": "puesto", "zona": "Zona silenciosa", "capacidad": 1, "precioHora": 2.5, "equipamiento": ["Enchufe", "Monitor externo 24\"", "Silla ergonómica"], "descripcion": "Puesto individual con monitor externo para trabajar con portátil.", "posicion": { "x": 5, "y": 1, "w": 2, "h": 2 } },
+    { "id": "A4", "nombre": "Puesto A4", "tipo": "puesto", "zona": "Zona silenciosa", "capacidad": 1, "precioHora": 2.5, "equipamiento": ["Enchufe", "Lámpara de lectura"], "descripcion": "Puesto individual cerca de la sección de referencia de la librería.", "posicion": { "x": 1, "y": 3, "w": 2, "h": 2 } },
+    { "id": "A5", "nombre": "Puesto A5", "tipo": "puesto", "zona": "Zona silenciosa", "capacidad": 1, "precioHora": 2.5, "equipamiento": ["Enchufe", "Monitor externo 24\"", "Silla ergonómica"], "descripcion": "Puesto individual con monitor y reposapiés.", "posicion": { "x": 3, "y": 3, "w": 2, "h": 2 } },
+    { "id": "A6", "nombre": "Puesto A6", "tipo": "puesto", "zona": "Zona silenciosa", "capacidad": 1, "precioHora": 2.5, "equipamiento": ["Enchufe", "Lámpara de lectura", "Silla ergonómica"], "descripcion": "Puesto individual en la esquina más tranquila de la planta.", "posicion": { "x": 5, "y": 3, "w": 2, "h": 2 } },
+    { "id": "S1", "nombre": "Sala Turing", "tipo": "sala", "zona": "Salas de reuniones", "capacidad": 4, "precioHora": 8, "equipamiento": ["Pantalla 50\"", "Pizarra", "Videoconferencia"], "descripcion": "Sala cerrada para reuniones pequeñas y tutorías.", "posicion": { "x": 8, "y": 1, "w": 2, "h": 2 } },
+    { "id": "S2", "nombre": "Sala Lovelace", "tipo": "sala", "zona": "Salas de reuniones", "capacidad": 6, "precioHora": 10, "equipamiento": ["Pantalla 65\"", "Pizarra", "Videoconferencia"], "descripcion": "Sala cerrada para trabajo en equipo con pantalla grande.", "posicion": { "x": 10, "y": 1, "w": 3, "h": 2 } },
+    { "id": "S3", "nombre": "Sala Hopper", "tipo": "sala", "zona": "Salas de reuniones", "capacidad": 8, "precioHora": 14, "equipamiento": ["Proyector", "Pizarra de pared", "Sistema de audio"], "descripcion": "La sala más amplia de reuniones, pensada para seminarios y defensas de proyectos.", "posicion": { "x": 8, "y": 3, "w": 5, "h": 2 } },
+    { "id": "M1", "nombre": "Mesa compartida M1", "tipo": "mesa", "zona": "Zona colaborativa", "capacidad": 6, "precioHora": 2, "equipamiento": ["Regleta central", "Pizarra móvil"], "descripcion": "Mesa abierta para estudiar en grupo; se puede conversar en voz baja.", "posicion": { "x": 1, "y": 6, "w": 3, "h": 2 } },
+    { "id": "M2", "nombre": "Mesa compartida M2", "tipo": "mesa", "zona": "Zona colaborativa", "capacidad": 6, "precioHora": 2, "equipamiento": ["Regleta central", "Pantalla compartida"], "descripcion": "Mesa abierta con pantalla para revisar trabajos en grupo.", "posicion": { "x": 4, "y": 6, "w": 3, "h": 2 } },
+    { "id": "C1", "nombre": "Cabina C1", "tipo": "cabina", "zona": "Cabinas", "capacidad": 1, "precioHora": 3, "equipamiento": ["Insonorización", "Aro de luz", "Enchufe"], "descripcion": "Cabina insonorizada para llamadas y entrevistas en línea.", "posicion": { "x": 1, "y": 8, "w": 2, "h": 2 } },
+    { "id": "C2", "nombre": "Cabina C2", "tipo": "cabina", "zona": "Cabinas", "capacidad": 1, "precioHora": 3, "equipamiento": ["Insonorización", "Micrófono USB", "Enchufe"], "descripcion": "Cabina insonorizada con micrófono para grabar pódcasts o clases.", "posicion": { "x": 3, "y": 8, "w": 2, "h": 2 } },
+    { "id": "F1", "nombre": "Aula Berners-Lee", "tipo": "aula", "zona": "Formación", "capacidad": 16, "precioHora": 25, "equipamiento": ["Proyector", "16 puestos con enchufe", "Micrófono inalámbrico"], "descripcion": "Aula de formación para talleres, cursos y presentaciones.", "posicion": { "x": 8, "y": 6, "w": 5, "h": 4 } }
+  ],
+
+  "GET /coworking/ocupacion": {
+    "planta": "Planta baja",
+    "horario": { "apertura": "08:00", "cierre": "22:00" },
+    "estados": [
+      { "espacioId": "A1", "estado": "ocupado", "desde": "08:30", "hasta": "12:30", "ocupadoPor": "Lucía Fernández", "perfil": "Grado en Ingeniería Informática", "personas": 1 },
+      { "espacioId": "A2", "estado": "libre", "proximaReserva": { "desde": "16:00", "hasta": "18:00" } },
+      { "espacioId": "A3", "estado": "ocupado", "desde": "09:15", "hasta": "13:00", "ocupadoPor": "Martín Aguirre", "perfil": "Máster en Ciencia de Datos", "personas": 1 },
+      { "espacioId": "A4", "estado": "libre", "proximaReserva": null },
+      { "espacioId": "A5", "estado": "ocupado", "desde": "10:00", "hasta": "14:00", "ocupadoPor": "Sofía Romero", "perfil": "Doctorado en Física", "personas": 1 },
+      { "espacioId": "A6", "estado": "libre", "proximaReserva": { "desde": "13:00", "hasta": "15:00" } },
+      { "espacioId": "S1", "estado": "ocupado", "desde": "09:00", "hasta": "11:00", "ocupadoPor": "Grupo TFM · Diseño UX", "perfil": "Máster en Diseño de Experiencia de Usuario", "personas": 4 },
+      { "espacioId": "S2", "estado": "libre", "proximaReserva": { "desde": "12:00", "hasta": "14:00" } },
+      { "espacioId": "S3", "estado": "ocupado", "desde": "10:00", "hasta": "13:30", "ocupadoPor": "Seminario de Investigación en IA", "perfil": "Departamento de Informática", "personas": 7 },
+      { "espacioId": "M1", "estado": "ocupado", "desde": "08:00", "hasta": "14:00", "ocupadoPor": "Club de Programación Nexus", "perfil": "Asociación de estudiantes", "personas": 5 },
+      { "espacioId": "M2", "estado": "libre", "proximaReserva": null },
+      { "espacioId": "C1", "estado": "ocupado", "desde": "10:30", "hasta": "11:00", "ocupadoPor": "Diego Paredes", "perfil": "Grado en Economía", "personas": 1 },
+      { "espacioId": "C2", "estado": "libre", "proximaReserva": { "desde": "17:30", "hasta": "18:00" } },
+      { "espacioId": "F1", "estado": "ocupado", "desde": "11:00", "hasta": "13:00", "ocupadoPor": "Taller: Introducción a Next.js", "perfil": "Escuela de Ingeniería", "personas": 14 }
+    ]
+  },
+
+  "POST /auth/login": {
+    "token": "nexus-demo-7f3a9c2e",
+    "usuario": {
+      "id": 101,
+      "nombre": "Jhordy Camacho",
+      "email": "jhordy.camacho@nexus.edu",
+      "programa": "Máster en Diseño y Desarrollo de Interfaces Web"
+    }
+  },
+
+  "GET /usuarios/me/compras": [
+    {
+      "id": "PED-2026-0087", "fecha": "2026-09-02", "estado": "entregado",
+      "items": [
+        { "libroId": 25, "cantidad": 1, "precioUnitario": 19.9 },
+        { "libroId": 26, "cantidad": 1, "precioUnitario": 32.9 }
+      ],
+      "total": 52.8
+    },
+    {
+      "id": "PED-2026-0112", "fecha": "2026-09-28", "estado": "entregado",
+      "items": [
+        { "libroId": 3, "cantidad": 1, "precioUnitario": 34.95 },
+        { "libroId": 29, "cantidad": 1, "precioUnitario": 6.9 }
+      ],
+      "total": 41.85
+    }
+  ],
+
+  "POST /compras": {
+    "id": "PED-2026-0154",
+    "estado": "confirmado",
+    "mensaje": "Compra registrada. Puedes recoger tus libros en el mostrador de la librería."
+  },
+
+  "GET /usuarios/me/reservas": [
+    { "id": "RES-2026-0291", "espacioId": "S2", "fecha": "2026-10-06", "desde": "16:00", "hasta": "18:00", "personas": 4, "motivo": "Reunión de grupo", "estado": "finalizada" }
+  ],
+
+  "POST /coworking/reservas": {
+    "id": "RES-2026-0318",
+    "estado": "confirmada",
+    "mensaje": "Reserva confirmada. Presenta tu carné universitario en recepción."
+  }
+}
